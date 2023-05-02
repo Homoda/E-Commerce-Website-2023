@@ -1,0 +1,397 @@
+/* Start Variables */
+:root {
+    --main-color: #00b3ff;
+    --secondary-color: #eee;
+    --main-transition: 0.5s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 18px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1 {
+    padding: 40px 80px;
+}
+.section-m1 {
+    margin: 40px 0;
+}
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.2s;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+#header .logo {
+    width: 150px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: var(--main-color);
+}
+
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 40%;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -7px;
+    left: 20px;
+    transition: 0.7s;
+}
+
+#header ul li a i {
+    font-size: 25px;
+    position: relative;
+}
+
+#header .count {
+    background-color: var(--main-color);
+    border-radius: 50%;
+    color: #fff;
+    padding: 5px;
+    margin: 2px;
+    font-size: 7px;
+    font-weight: 400;
+    position: absolute;
+    top: -5px;
+}
+
+/* End Header */
+/* Start Page Banner */
+#page-banner {
+    background-image: url(../Images/Banner/banner.png);
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 14px;
+}
+#page-banner h2,
+#page-banner p {
+    color: #fff;
+}
+/* End Page Banner */
+/* Start Subscribe */
+#subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #040f1f;
+}
+#subscribe h1 {
+    text-align: center;
+    color: #555;
+    animation: lighting 2s infinite;
+}
+@keyframes lighting {
+    0%, 100%{
+        color: #555;
+    }
+    50% {
+        color: #fff;
+        text-shadow: 0 0 10px #d39000ab, 0 0 10px #d39000ab, 0 0 10px #d39000ab;
+    }
+}
+#subscribe input {
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 30px;
+}
+#subscribe button {
+    background-color: var(--main-color);
+    color: #fff;
+    white-space: nowrap;
+    margin-top: 50px;
+    border-radius: 50px;
+}
+#subscribe button {
+    opacity: 0.5;
+    transition: var(--main-transition);
+}
+#subscribe button:hover {
+    opacity: 1;
+}
+/* End Subscribe */
+/* Start Footer */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #111;
+}
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .logo h1 {
+    color: #111;
+    font-size: 50px;
+    font-family: "Bad Script", cursive;
+}
+
+h1 span {
+    display: table-cell;
+    animation: animate 2s linear infinite;
+}
+
+h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+h1 span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+h1 span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+h1 span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px var(--main-color),
+            0 0 20px var(--main-color),
+            0 0 40px var(--main-color),
+            0 0 80px var(--main-color),
+            0 0 120px var(--main-color),
+            0 0 200px var(--main-color),
+            0 0 300px var(--main-color),
+            0 0 400px var(--main-color);
+    }
+    5%,
+    95% {
+        color: #111;
+        filter: blur(0px);
+        text-shadow: 0 0 10px none;
+    }
+}
+footer h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #999;
+}
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: #999;
+}
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #999;
+    margin-bottom: 10px;
+}
+footer .follow {
+    margin-top: 20px;
+}
+footer .follow i{
+    color: #999;
+    padding-right: 4px;
+    cursor: pointer;
+}
+footer .install .row img {
+    display: block;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    border: 0;
+}
+footer .install img {
+    margin: 30px 0 30px 0;
+}
+footer .follow i:hover,
+footer a:hover {
+    color: var(--main-color);
+}
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+/* End Footer */
+/* Start Scroll To Up */
+#scroll-to-top {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: none;
+    z-index: 9999;
+    opacity: 0.5;
+    transition: var(--main-transition);
+}
+#scroll-to-top:hover {
+    opacity: 1;
+}
+#scroll-to-top span {
+    background: linear-gradient(to right, #1368cc 50%, var(--main-color) 50%) no-repeat scroll right bottom/210% 100% var(--main-color);
+    transition: all ease var(--main-transition);
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#scroll-to-top span:before {
+    font-family: "FontAwesome";
+    content: "\f077";
+    font-size: 18px;
+    position: relative;
+    top: 5px;
+}
+/* End Scroll To Up */
